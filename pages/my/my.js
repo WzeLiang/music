@@ -6,14 +6,19 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    uid:""
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.getmusicList()
+ 
+    console.log(app.globalData.uid)
+    this.setData({
+      uid:app.globalData.uid
+    })
+    //this.getmusicList()
   },
 
   /**
@@ -23,9 +28,8 @@ Page({
 
   },
   getmusicList:function(){
-    console.log(app.globalData.Cookies)
     var that = this
-    app.httpGet('/user/subcount', {}, function (res) {
+    app.httpGet('/user/playlist?uid=' + this.data.uid , {}, function (res) {
       wx.hideLoading();
       console.log(res);
       // that.setData({

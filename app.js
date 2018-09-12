@@ -5,7 +5,9 @@ App({
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
     this.globalData.Cookie = wx.getStorageSync("sessionid");
+    this.globalData.uid = wx.getStorageSync("uid");
     console.log(this.globalData.Cookie)
+    console.log(this.globalData.uid)
     // 登录
     this.login();
     // 获取用户信息
@@ -66,7 +68,7 @@ App({
   },
   globalData: {
     userInfo: null,
-
+    uid:"",
     Cookie:'',
     baseUrl: "http://localhost:3000", //测试
 

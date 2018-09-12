@@ -25,7 +25,7 @@ Page({
       xhrFields: { withCredentials: true },
       data: formdata,
       success: function (res) {
-      //  console.log(res)
+       console.log(res)
         //console.log(res.header["set-cookie"]);
        // wx.setStorageSync("sessionid", res.header["Set-Cookie"])
         var str1 =""
@@ -85,7 +85,8 @@ Page({
         }
         console.log(cookiestr)
         wx.setStorageSync("sessionid", cookiestr)
-        return false;
+        wx.setStorageSync("uid", res.data.account.id)
+        console.log(res.data.account.id)
         setTimeout(function () {
          wx.switchTab({
            url: "/pages/my/my"
