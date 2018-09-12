@@ -1,0 +1,24 @@
+/* pages/login/login.wxss */
+.login-form{
+  display:block;
+}
+.login-form .item{
+  height:90rpx;border-bottom:#eee solid 1rpx;
+}
+.login-form .item image{
+  float:left;margin-top:23rpx;
+}
+.login-form .item input{
+  float:left;width:630rpx;margin-left:35rpx;height:90rpx;
+}
+.login-form .code input{
+  width:400rpx;
+}
+.login-form .code button{
+  float:right;height:50rpx;line-height:50rpx;font-size:24rpx;min-width:168rpx;
+  padding:0;margin-top:20rpx;border-radius:30rpx;
+}
+.login-main .submitBtn{
+  margin:100rpx auto 30rpx;width:560rpx;height:88rpx;line-height:88rpx;border-radius:50rpx;
+  display:block;clear:both;
+}

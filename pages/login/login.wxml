@@ -1,0 +1,15 @@
+<view class='login'>
+  <form class='login-form' bindsubmit='formSubmit' bindreset='formReset'>
+      <view class='item'>
+       
+        <input type='text' placeholder='请输入账号' name="phone" maxlength='11'  value="{{phone}}"></input>
+      </view>
+      <view class='item code'>
+       
+        <input type='password' placeholder='请输入密码' name="password" value='{{password}}' />
+
+      </view>
+      <button class='submitBtn' formType='submit' hover-class='none'>登录</button>
+     
+    </form>
+</view>
