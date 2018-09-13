@@ -1,5 +1,5 @@
 <view class='my'>
     <view class='list'>
-      <view class='item'>我喜欢的音乐</view>
+      <view class='item' wx:for="{{playlist}}" wx:key="" data-id="{{item.id}}" bindtap='GoToPlaylistdetail'>{{item.name}}</view>
     </view>
 </view>

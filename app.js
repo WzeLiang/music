@@ -70,6 +70,7 @@ App({
     userInfo: null,
     uid:"",
     Cookie:'',
+    playimgurl:"",
     baseUrl: "http://localhost:3000", //测试
 
 

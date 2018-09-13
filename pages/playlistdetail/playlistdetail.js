@@ -1,4 +1,4 @@
-// pages/my/my.js
+// pages/playlistdetail/playlistdetail.js
 const app = getApp();
 Page({
 
@@ -6,51 +6,51 @@ Page({
    * 页面的初始数据
    */
   data: {
-    uid:"",
-    playlist:[]
+    playlistid:"",
+    songlist:[],
+    songimgurl:""
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
- 
-    console.log(app.globalData.uid)
     this.setData({
-      uid:app.globalData.uid
+      playlistid: options.id
     })
-    //this.getmusicList()
+    this.getlistinfo()
   },
+  getlistinfo: function () {
+    var that = this
+    app.httpGet('/playlist/detail?id=' + this.data.playlistid, {}, function (res) {
+      wx.hideLoading();
+      console.log(res);
+      that.setData({
+        songlist: res.data.playlist.tracks
+      })
 
+
+    });
+  },
+  topalyer:function(e){
+    console.log(e)
+    app.globalData.playimgurl = e.currentTarget.dataset.imgurl
+    wx.navigateTo({
+      url: '/pages/player/player?id=' + e.currentTarget.dataset.id 
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
 
   },
-  getmusicList:function(){
-    var that = this
-    app.httpGet('/user/playlist?uid=' + this.data.uid , {}, function (res) {
-      wx.hideLoading();
-      console.log(res);
-      that.setData({
-       playlist:res.data.playlist
-      })
 
-
-    });
-  },
-  GoToPlaylistdetail:function(e){
-    console.log(e)
-      wx.navigateTo({
-        url: '/pages/playlistdetail/playlistdetail?id=' + e.currentTarget.dataset.id,
-      })
-  },
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    this.getmusicList()
+
   },
 
   /**

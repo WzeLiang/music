@@ -1,0 +1,17 @@
+/* pages/playlistdetail/playlistdetail.wxss */
+page{
+  background: rgba(0, 0, 0, .6);
+  color: white;
+}
+.songlist{
+  position: absolute;
+  z-index: 0;
+  height: 100%;
+  width: 100%;
+  overflow: scroll;
+  top: 0;
+  left: 0;
+}
+.songlist .songitem{
+  padding: 20rpx 30rpx;
+}

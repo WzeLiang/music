@@ -1,0 +1,11 @@
+<view class='playlistdetail'>
+    <view class='back-img'>
+        <image src='/images/back.jpg'></image>
+    </view>
+    <view class='songlist'>
+        <view class='songitem' wx:for="{{songlist}}" wx:key=""  data-index="{{index}}" data-id="{{item.id}}" data-imgurl="{{item.al.picUrl}}" bindtap='topalyer'>
+            {{item.name}}
+    
+        </view>
+    </view>
+</view>

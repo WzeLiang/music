@@ -1,0 +1,40 @@
+<view class='player'>
+  <view class='back'>
+    <image src='{{songimgurl}}'></image>
+  </view>
+  <!-- audio.wxml -->
+ 
+
+  <!-- <button type="primary" bindtap="audioPlay">播放</button>
+  <button type="primary" bindtap="audioPause">暂停</button>
+  <button type="primary" bindtap="audio14">设置当前播放时间为14秒</button>
+  <button type="primary" bindtap="audioStart">回到开头</button> -->
+  <!-- <audio poster="{{poster}}" name="{{name}}" author="{{author}}" src="{{songinfo.url}}" id="myAudio" controls loop></audio> -->
+  <view class='head'>
+      <view class='head-songname'>{{songinfo.name}}</view>
+      <view class='head-singer'>
+        <text wx:for="{{songinfo.ar}}" wx:key="" >{{item.name}}<text wx:if="songinfo.ar.length>1">/</text></text>
+      </view>
+  </view>
+   <audio poster="{{poster}}" name="{{name}}" author="{{author}}" src="{{playinfo.url}}" id="myAudio" controls loop></audio>
+  <view class='song-img'>
+      <image src='{{songimgurl}}' style="animation-play-state:{{isplay?'running':'paused'}} !important"></image>
+  </view>
+ <view class='song-bottom'>
+     <view class='song-info'>
+        <view>喜欢</view>
+        <view>评价</view>
+      </view>
+      <view class='song-progress'>      
+      </view>
+      <view class='btn-box'>
+          <view class='pre'>上一首</view>
+          <view class='play'>
+              <text wx:if="{{!isplay}}" bindtap="audioPlay">播放</text>
+              <text wx:if="{{isplay}}" bindtap="audioPause">暂停</text>
+          </view>
+          <view class='next' >下一首</view>
+      </view>
+ </view>
+
+</view>

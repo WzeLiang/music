@@ -6,6 +6,8 @@
     "pages/login/login",
     "pages/member/member",
     "pages/my/my",
+    "pages/playlistdetail/playlistdetail",
+    "pages/player/player",
     "pages/friend/friend"
 
   ],
