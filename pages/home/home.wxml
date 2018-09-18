@@ -1,2 +1,7 @@
 <!--pages/home/home.wxml-->
-<text>pages/home/home.wxml</text>
+<view>
+  <view class='back-img'>
+      <image src='/images/back.jpg'></image>
+  </view>
+  <view class=''></view>
+</view>

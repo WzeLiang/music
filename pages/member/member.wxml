@@ -1,2 +1,39 @@
 <!--pages/member/member.wxml-->
-<text>pages/member/member.wxml</text>
+<view class='member'>
+  <view class='back-img'>
+      <image src='/images/back.jpg'></image>
+  </view>
+  <view class='user'>
+      <view class='userinfo'>
+        <view class='info-left'>
+            <image class='left-userlogo' src='{{userinfo.avatarUrl}}'></image>
+            <view class='left-username'>{{userinfo.nickname}}</view>
+        </view>
+        <view class='sign'>签到</view>
+      </view>
+      <view class='user-msg'>
+          <view class='msg-dynamic'>
+            <view class='name'>动态</view>
+            <view>{{userinfo.eventCount}}</view>
+          </view>
+          <view class='msg-follow'>
+            <view class='name'>关注</view>
+            <view>{{userinfo.follows}}</view>
+          </view>
+          <view class='msg-fans'>
+            <view class='name'>粉丝</view>
+            <view>{{userinfo.followeds}}</view>
+          </view>
+          <view class='msg-my'>
+            <view class='name'></view>
+            <view>我的资料</view>
+          </view>
+      </view>
+  </view>
+
+  <view class='operation'>
+    <view>设置</view>
+    <view class='login-out'>退出登录</view>
+  </view>
+
+</view>

@@ -22,18 +22,31 @@
   </view>
  <view class='song-bottom'>
      <view class='song-info'>
-        <view>喜欢</view>
-        <view>评价</view>
+        <view >
+           <image src='/images/like.png'></image>
+             <!-- <image src='/images/unlike.png'></image> -->
+        </view>
+        <view class='info-comment'>
+            <view class='comment-total'>{{total}}</view>
+            <image src='/images/discuss.png'></image>
+        </view>
       </view>
-      <view class='song-progress'>      
+      <view class='song-progress'>   
+        <view class='progress-icon'catchtouchstart="handleTouchStart" catchtouchend="handleTouchEnd" catchtouchmove="handleTouchMove" ></view>
       </view>
       <view class='btn-box'>
-          <view class='pre'>上一首</view>
-          <view class='play'>
-              <text wx:if="{{!isplay}}" bindtap="audioPlay">播放</text>
-              <text wx:if="{{isplay}}" bindtap="audioPause">暂停</text>
+          <view class='pre'>
+              <image src='/images/pre.png'></image>
           </view>
-          <view class='next' >下一首</view>
+          <view class='play'>
+              <!-- <text wx:if="{{!isplay}}" bindtap="audioPlay">播放</text> -->
+              <image wx:if="{{!isplay}}" bindtap="audioPlay" src='/images/play.png'></image>
+               <image wx:if="{{isplay}}" bindtap="audioPause" src='/images/pause.png'></image>
+              <!-- <text wx:if="{{isplay}}" bindtap="audioPause">暂停</text> -->
+          </view>
+          <view class='next' >
+            <image src='/images/next.png'></image>
+          </view>
       </view>
  </view>
 

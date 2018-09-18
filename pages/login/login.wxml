@@ -1,4 +1,7 @@
 <view class='login'>
+ <view class='back-img'>
+        <image src='/images/back.jpg'></image>
+    </view>
   <form class='login-form' bindsubmit='formSubmit' bindreset='formReset'>
       <view class='item'>
        

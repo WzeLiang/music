@@ -70,16 +70,65 @@ to{transform:rotate(360deg)}
   color: white;
   bottom: 0;
   width: 100%;
-  border-top: 1rpx solid white;
-    z-index: 2
+  z-index: 2;
+  
+}
+.song-bottom .song-info view image{
+  width: 80rpx;
+  height: 80rpx;
+}
+.song-bottom .song-progress{
+  margin: 0 30rpx;
+  height: 4rpx;
+  background: #ffffff;
+  position: relative;
+  width: 690rpx;
+}
+
+.song-bottom .song-progress .progress-icon{
+  position: absolute;
+  width: 10rpx;
+  height: 10rpx;
+  background:white;
+  border-radius: 50%;
+  top: -3rpx;
+
 }
 .song-bottom .btn-box{
   display: flex;
   justify-content: space-around;
   align-items: center;
+  padding: 20rpx 0;
+}
+   
+.song-bottom .btn-box{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20rpx 0;
 }
 .song-bottom .song-info{
   display: flex;
   justify-content: space-around;
   align-items: center;
+}
+.song-bottom .btn-box .play image{
+  width: 80rpx;
+  height: 80rpx;
+}
+.song-bottom .btn-box .pre image,.song-bottom .btn-box .next image{
+  width: 50rpx;
+  height: 50rpx;
+}
+.song-bottom .song-info .info-comment{
+  position: relative;
+}
+.song-bottom .song-info .info-comment .comment-total{
+  position: absolute;
+  color: white;
+  font-size: 22rpx;
+  background: rgba(0, 0, 0, .6);
+  right: -10rpx;
+  top: -10rpx
+
 }

@@ -1,1 +1,30 @@
 /* pages/my/my.wxss */
+page{
+  background: rgba(0, 0, 0, .6);
+  color: white;
+}
+.list{
+  position: absolute;
+  z-index: 0;
+  height: 100%;
+  width: 100%;
+  overflow: scroll;
+  top: 0;
+  left: 0;
+}
+.list .item{
+  padding: 10rpx 30rpx;
+  display: flex;
+  align-items: center;
+}
+.list .item .item-info .trackCount{
+  font-size: 26rpx;
+} 
+.list .item .item-info .textOverflow{
+  width: 560rpx;
+}
+.list .item .item-img image{
+  width: 120rpx;
+  height: 120rpx;
+  margin-right: 20rpx;
+}

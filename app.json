@@ -17,9 +17,9 @@
     "navigationBarTitleText": "WeChat",
     "navigationBarTextStyle":"black"
   },"tabBar": {
-    "color": "#a6a6a6",
+    "color": "#ffffff",
     "selectedColor": "#51b6c8",
-    "backgroundColor": "#ffffff",
+    "backgroundColor": "rgba(0,0,0,.6)",
     "list": [
       {
         "pagePath": "pages/home/home",

@@ -20,3 +20,10 @@
   width: 100%;
   height: 100%;
 }
+page{
+  background: rgba(0, 0, 0, .6);
+  color: white;
+}
+.textOverflow{
+  overflow:hidden;white-space:nowrap;text-overflow: ellipsis;
+}

@@ -10,7 +10,11 @@ Page({
     playinfo:{},
     songinfo:{},
     isplay:false,
-    songimgurl:""
+    songimgurl:"",
+    hotComments:[],
+    comments:[],
+    total:0
+
   },
 
   /**
@@ -26,6 +30,7 @@ Page({
     console.log(this.data.songinfo)
     this.getplayinfo()
     this.getsonginfo()
+    this.getComment()
     
   },
   //获取歌曲播放地址
@@ -42,6 +47,7 @@ Page({
 
     });
   },
+
   //获取歌曲详情
   getsonginfo: function () {
     var that = this
@@ -53,6 +59,27 @@ Page({
       that.setData({
         songinfo: songinfo
       })
+
+
+    });
+  },
+  //获取歌曲评论/comment/music
+  getComment:function(){
+    var that = this
+    app.httpGet('/comment/music?id=' + this.data.songid, {}, function (res) {
+      wx.hideLoading();
+      console.log(res);
+      var total = res.data.total;
+      if (total >= 1000) {
+        total = 999
+      }
+      that.setData({
+        hotComments: res.data.hotComments,
+        comments: res.data.comments,
+        total: total
+      })
+
+
 
 
     });
@@ -72,6 +99,15 @@ Page({
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
+  handleTouchStart:function(e){
+    console.log(e)
+  },
+  handleTouchEnd: function (e) {
+    console.log(e)
+  },
+  handleTouchMove:function (e) {
+    console.log(e)
+  },
   onReady: function () {
     this.audioCtx = wx.createAudioContext('myAudio')
   },

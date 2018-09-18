@@ -1,5 +1,16 @@
 <view class='my'>
+     <view class='back-img'>
+          <image src='/images/back.jpg'></image>
+    </view>
     <view class='list'>
-      <view class='item' wx:for="{{playlist}}" wx:key="" data-id="{{item.id}}" bindtap='GoToPlaylistdetail'>{{item.name}}</view>
+      <view class='item' wx:for="{{playlist}}" wx:key="" data-id="{{item.id}}" bindtap='GoToPlaylistdetail'>
+            <view class='item-img'>
+                <image src='{{item.coverImgUrl}}'></image>
+            </view>
+            <view class='item-info'>
+              <view class='textOverflow'> {{item.name}}</view>
+              <view class='trackCount'>{{item.trackCount}}首</view>
+            </view>
+      </view>
     </view>
 </view>
