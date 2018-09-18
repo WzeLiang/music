@@ -3,5 +3,10 @@
   <view class='back-img'>
       <image src='/images/back.jpg'></image>
   </view>
-  <view class=''></view>
+  <view class='search-box'>
+    <input name="searchvalue" bindinput='searchinput' placeholder='请输入歌名'></input>
+    <view class="player" bindtap='toplayer'>
+      <image src='/images/music.png' style="animation-play-state:{{isplay?'running':'paused'}} !important"></image>
+    </view>
+  </view>
 </view>

@@ -70,9 +70,10 @@ App({
     userInfo: null,
     uid:"",
     Cookie:'',
-    playimgurl:"",
+    playimgurl: wx.getStorageSync("playimgurl"),
+    isplay :false,
     baseUrl: "http://localhost:3000", //测试
-
+    id:wx.getStorageSync("id"),
 
     // baseImgUrl: "http://ps.rterp1.shikefood.com/erp/images",    //正式商品图片路径
     // baseImgUrl: "http://ps.rterp.shikefood.com/erp/images",    //正式商品图片路径

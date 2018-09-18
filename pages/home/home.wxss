@@ -1,1 +1,33 @@
 /* pages/home/home.wxss */
+.search-box{
+  background: rgba(255, 255, 255, .4);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15rpx 30rpx;
+}
+.search-box input{
+  background: rgba(0,0,0, .4);
+  width: 600rpx;
+  height: 60rpx;
+  border-radius: 30rpx;
+  padding-left: 20rpx;
+  box-sizing: border-box;
+}
+@keyframes rotating{
+from{transform:rotate(0)}
+to{transform:rotate(360deg)}
+}
+.search-box .player image{
+  width: 60rpx;
+  height: 60rpx;
+  animation:rotating 20s linear infinite;
+}
+.isplay{
+  animation-play-state: running;
+  -webkit-animation-play-state: running;
+}
+.ispause{
+  animation-play-state: paused;
+  -webkit-animation-play-state:paused;
+}

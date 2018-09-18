@@ -43,7 +43,7 @@ Page({
         playinfo: res.data.data[0],
       })
       
-
+      that.audioPlay()
 
     });
   },
@@ -84,17 +84,30 @@ Page({
 
     });
   },
+  
   audioPlay: function () {
-    this.audioCtx.play()
+    // this.audioCtx.play()
+    wx.playBackgroundAudio({
+      dataUrl: this.data.playinfo.url,//(必要)音乐链接，目前支持的格式有 m4a, aac, mp3, wav
+      title: this.data.songinfo.name ,//音乐标题
+      coverImgUrl: this.data.songimgurl,//封面URL
+      success: function(res) {
+        console.log("aaa");
+        app.globalData.isplay = true;
+      }
+    })
     this.setData({
       isplay: true
     })
+    
   },
   audioPause: function () {
-    this.audioCtx.pause()
+    // this.audioCtx.pause()
+    wx.pauseBackgroundAudio()
      this.setData({
       isplay: false
     })
+    app.globalData.isplay=false;
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
