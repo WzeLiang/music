@@ -6,16 +6,33 @@ Page({
    * 页面的初始数据
    */
   data: {
-    isplay:false
+    isplay:false,
+    Proposallist:[],
+    isshowProposallist:false
   },
   //监听搜索框输入
   searchinput:function(e){
-    console.log(e)
+    console.log(e.detail.value)
+    this.getProposal(e.detail.value)
   },
   toplayer:function(){
       wx.navigateTo({
         url: '/pages/player/player?id=' + app.globalData.id
       })
+  },
+  //搜索建议、
+  getProposal:function(value){
+    var that = this
+    app.httpGet('/search/suggest?keywords=' + value, {}, function (res) {
+      wx.hideLoading();
+      console.log(res);
+      that.setData({
+        Proposallist: res.data.result.songs,
+        isshowProposallist:true
+      })
+
+
+    });
   },
   //获取播放状态
   getPlaystatus: function () {

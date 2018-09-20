@@ -8,7 +8,8 @@
     "pages/my/my",
     "pages/playlistdetail/playlistdetail",
     "pages/player/player",
-    "pages/friend/friend"
+    "pages/friend/friend",
+    "pages/searchlist/searchlist"
 
   ],
   "window":{
